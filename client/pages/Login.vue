@@ -1,6 +1,8 @@
 <template>
   <div class="modal modal-sign-in">
-    <span class="modal-close"></span>
+    <nuxt-link to="/">
+      <span class="modal-close"></span>
+    </nuxt-link>
     <span class="modal-title">Вход</span>
     <form action="#" class="modal-form">
       <label>
@@ -14,6 +16,8 @@
       <button class="btn-fill text-lg">Войти</button>
     </form>
     <span class="modal-msg">Еще не с нами?</span>
-    <a href="#" class="modal-msg-link">Зарегистрироваться</a>
+    <nuxt-link class="modal-msg-link" to="/registration">
+      Зарегистрироваться
+    </nuxt-link>
   </div>
 </template>
