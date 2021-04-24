@@ -2,7 +2,7 @@
   <section class="views-main">
     <h2 class="views-main__title d-inline-block">Выберите спортивную игру</h2>
     <div class="filter-block">
-      <FilterForm :filter="filter"/>
+      <FilterForm v-for="(filter, key) in filters" :key="`filters-${key}`" :filter="filter"/>
     </div>
     <div class="search-block mb-6">
       <input type="text" placeholder="Город"/>
@@ -28,26 +28,29 @@ export default {
   computed: {
     ...mapGetters({
       meetings: 'meetings/items',
+      filters: 'categories/items'
     }),
   },
   methods: {
     ...mapActions({
       fetсhMeetings: 'meetings/fetchAll',
+      fetchFilters: 'categories/fetchAll'
     }),
   },
   mounted() {
     this.fetсhMeetings()
+    this.fetchFilters()
   },
-  data: () => ({
-    filter: [
-      {key: '', name: 'Футбол'},
-      {key: '', name: 'Волейбол'},
-      {key: '', name: 'Тенис'},
-      {key: '', name: 'Баскетбол'},
-      {key: '', name: 'Бег'},
-      {key: '', name: 'Хоккей'},
-      {key: '', name: 'Спортзал'},
-    ],
-  }),
+  // data: () => ({
+  //   filter: [
+  //     {key: '', name: 'Футбол'},
+  //     {key: '', name: 'Волейбол'},
+  //     {key: '', name: 'Тенис'},
+  //     {key: '', name: 'Баскетбол'},
+  //     {key: '', name: 'Бег'},
+  //     {key: '', name: 'Хоккей'},
+  //     {key: '', name: 'Спортзал'},
+  //   ],
+  // }),
 }
 </script>

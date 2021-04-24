@@ -4,7 +4,7 @@
     <button
       class="block filter-btn rounded-full py-1 px-3 leading-6"
     >
-      {{ item.name }}
+      {{ item.title }}
     </button>
   </li>
   </ul>
@@ -28,5 +28,5 @@ export default {
   .filter {
     display: flex;
     list-style: none;
-  } 
+  }
 </style>
