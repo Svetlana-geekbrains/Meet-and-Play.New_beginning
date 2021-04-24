@@ -102,24 +102,29 @@
 </template>
 
 <script>
+// State
 import {mapActions, mapGetters} from 'vuex';
-
+// Setups
 import {schema} from "~/pages/create/fields";
+//Mixins
+import {relationsMixin} from "~/mixins/relation";
 
 export default {
+  mixins: [relationsMixin],
   components: {
     CrudForm: () => import('~/components/CrudForm')
   },
   computed: {
     ...mapGetters({
       meeting: 'meetings/item',
-      error: 'meetings/itemError'
+      error: 'meetings/itemError',
+      categories: 'categories/items'
     }),
     isUpdating: ({
-                  $route: {
-                    params: {id},
-                  },
-                }) => id !== undefined,
+                   $route: {
+                     params: {id},
+                   },
+                 }) => id !== undefined,
     meetingId() {
       return this.$route.params.id;
     }
@@ -129,6 +134,13 @@ export default {
     schema
   }),
   async mounted() {
+    await this.fetchCategories()
+    for (const category in this.categories) {
+      this.setFields({ fieldKey: 'categories', values: Object.values(this.categories[category]) })
+      // Переделать
+    }
+
+    // this.setFields({ fieldKey: 'categories', values: Object.values(this.categories) })
     if (this.isUpdating) {
       await this.fetchMeeting(this.$route.params.id)
       for (const item in this.meeting) {
@@ -141,23 +153,29 @@ export default {
   },
   methods: {
     ...mapActions({
+      // generic
       createMeeting: 'meetings/create',
       fetchMeeting: 'meetings/fetchOne',
       updateMeeting: 'meetings/update',
+
+      // logic
+      fetchCategories: 'categories/fetchAll'
     }),
     setModel() {
       this.model = {
         title: '',
         city: '',
         address: '',
-        sportType: '',
-        image: '',
         count: 0,
         date: '',
         time: '',
+        categories: {
+          title: ''
+        }
       }
     },
     async onMeetUpdate() {
+
       await this.updateMeeting({id: this.$route.params.id, payload: this.model})
       this.$router.back()
     },

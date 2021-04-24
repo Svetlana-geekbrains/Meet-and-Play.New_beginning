@@ -40,6 +40,10 @@ const schema = new Schema({
         type: ObjectId,
         ref: "User",
     },
+    categories: {
+        type: ObjectId,
+        ref: "Category",
+    },
 })
 
 module.exports = model('Meeting', schema)

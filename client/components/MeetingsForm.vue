@@ -38,7 +38,14 @@
         :key="`meeting-${key}`"
         class="max-h-56 hover:cursor-pointer play-card"
       >
-        <img class="block mb-2 rounded-2xl" :src="meet.image" alt="play-card" />
+        <div v-for="category in meet.categories" :key="category">
+        <img v-if="category === 'Футбол'" class="block mb-2 rounded-2xl" src="../static/img/football.jpg" alt="play-card" />
+        <img v-if="category === 'Баскетбол'" class="block mb-2 rounded-2xl" src="../static/img/basketball.jpg" alt="play-card" />
+        <img v-if="category === 'Теннис'" class="block mb-2 rounded-2xl" src="../static/img/tennis.jpg" alt="play-card" />
+        <img v-if="category === 'Волейбол'" class="block mb-2 rounded-2xl" src="../static/img/volleyball.jpg" alt="play-card" />
+        <img v-if="category === 'Регби'" class="block mb-2 rounded-2xl" src="../static/img/rugby.jpg" alt="play-card" />
+        <img v-if="category === 'Хоккей'" class="block mb-2 rounded-2xl" src="../static/img/hockey.jpg" alt="play-card" />
+        </div>
         <div class="play-card__header">
           <span class="inline-block font-bold meeting-name">{{
             meet.title
