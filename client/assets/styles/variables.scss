@@ -1,5 +1,5 @@
-@import "./colors.scss";
-@import "./sizes.scss";
+@import './colors.scss';
+@import './sizes.scss';
 
 *,
 *::after,
@@ -7,7 +7,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Inter", Arial, sans-serif;
+  font-family: 'Inter', Arial, sans-serif;
   font-size: 16px;
 }
 
@@ -56,6 +56,9 @@ button {
   &:hover,
   &:active {
     background-color: $btn-fill-hover;
+  }
+  &_settings {
+    width: auto;
   }
 }
 
