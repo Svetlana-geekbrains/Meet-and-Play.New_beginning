@@ -75,12 +75,11 @@
       </form>
       <span class="flex justify-center modal-msg">Уже зарегистрированы?</span>
       <nuxt-link
-        to="/login"
-        class="flex justify-center text-black font-bold modal-msg-link"
-      >
+        :to="{ name: 'login' }"
+        class="flex justify-center text-black font-bold modal-msg-link">
         Войти
-      </nuxt-link>
-    </div>
+        </nuxt-link>
+      </div>
   </div>
 </template>
 

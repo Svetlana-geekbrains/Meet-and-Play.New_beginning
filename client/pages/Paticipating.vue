@@ -11,6 +11,7 @@
 
 <script>
 export default {
+  middleware: 'auth',
   components: {
     FilterForm: () => import('@/components/FilterForm'),
     MeetingsForm: () => import('@/components/MeetingsForm'),

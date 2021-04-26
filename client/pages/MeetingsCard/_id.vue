@@ -22,6 +22,7 @@
 import {mapActions, mapGetters} from 'vuex'
 
 export default {
+  middleware: 'auth',
   components: {
     MeetingInfo: () => import('~/components/MeetingInfo'),
     MeetingMembers: () => import('~/components/MeetingMembers'),
