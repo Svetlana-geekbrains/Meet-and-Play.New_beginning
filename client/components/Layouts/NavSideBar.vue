@@ -5,14 +5,18 @@
       <img class="avatar-img" src="#" alt="avatar" />
     </div>
     <div class="authorization-description text-center">
-      <template>
+      <!-- <template>
         <span class="user-name"
           >Константин <br />
           Константинов</span
         >
         <span class="user-city d-block">Санкт-Петербург</span>
-      </template>
-      <!-- <span class="user-authorization font-weight-bold">Вход&nbsp;/&nbsp;Регистрация</span> -->
+      </template> -->
+      <nuxt-link no-prefetch to="/login">
+        <span class="user-authorization font-weight-bold">
+          Вход&nbsp;/&nbsp;Регистрация
+        </span>
+      </nuxt-link>
     </div>
   </div>
 </template>

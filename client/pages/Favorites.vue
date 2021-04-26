@@ -1,7 +1,7 @@
 <template>
   <section class="views-main">
     <h2 class="views-main__title d-inline-block">Избранное</h2>
-    <button class="btn-search btn d-block" type="button">Найти игру</button>
+    <!-- <button class="btn-search btn d-block" type="button">Найти игру</button> Скрыли, для расширения дальнейшего функционала -->
     <div class="filter-block">
       <FilterForm :filter="filter" />
     </div>

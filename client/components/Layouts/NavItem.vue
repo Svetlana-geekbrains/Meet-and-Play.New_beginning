@@ -12,7 +12,7 @@
   </li>
 </template>
 
-<script> 
+<script>
 export default {
   name: 'NavItem',
   props: {
