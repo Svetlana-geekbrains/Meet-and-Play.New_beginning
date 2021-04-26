@@ -1,6 +1,6 @@
 <template>
   <div
-    class="modal modal-sign-up min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8"
+    class="modal modal-sign-up flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8"
   >
     <nuxt-link to="/">
       <span class="modal-close"></span>
@@ -76,10 +76,11 @@
       <span class="flex justify-center modal-msg">Уже зарегистрированы?</span>
       <nuxt-link
         :to="{ name: 'login' }"
-        class="flex justify-center text-black font-bold modal-msg-link">
+        class="flex justify-center text-black font-bold modal-msg-link"
+      >
         Войти
-        </nuxt-link>
-      </div>
+      </nuxt-link>
+    </div>
   </div>
 </template>
 
