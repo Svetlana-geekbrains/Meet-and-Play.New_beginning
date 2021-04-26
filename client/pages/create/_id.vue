@@ -110,6 +110,7 @@ import {schema} from "~/pages/create/fields";
 import {relationsMixin} from "~/mixins/relation";
 
 export default {
+  middleware: 'auth',
   mixins: [relationsMixin],
   components: {
     CrudForm: () => import('~/components/CrudForm')
