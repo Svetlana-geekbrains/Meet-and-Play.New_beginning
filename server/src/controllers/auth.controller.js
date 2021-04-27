@@ -47,7 +47,7 @@ module.exports = {
         userId: user._id,
         email: user.email,
       }, process.env.JWT_SECRET, {
-        expiresIn: '1m'
+        expiresIn: process.env.ACCESS_TOKEN_LIVE
       })
 
       return res.status(200).send({
@@ -83,7 +83,7 @@ module.exports = {
         userId: foundUser._id,
         email: foundUser.email,
       }, process.env.JWT_SECRET, {
-        expiresIn: '1m'
+        expiresIn: process.env.ACCESS_TOKEN_LIVE
       })
 
       const refreshToken = jwt.sign({
