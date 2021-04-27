@@ -59,7 +59,6 @@ export default {
           maxAge: 60 * 60 * 24 * 30
         },
         endpoints: {
-          user: false,
           refresh: {
             url: '/auth/refresh',
             method: 'post'
