@@ -2,7 +2,11 @@
   <div class="side-bar_header items-center flex flex-col rounded-br-2xl">
     <h2 class="font-weight-bold">Meet & Play</h2>
     <div class="avatar">
-      <img class="avatar-img" src="#" alt="avatar" />
+      <img
+        class="avatar-img"
+        src="../../static/img/avatar-default.jpg"
+        alt="avatar"
+      />
     </div>
     <div class="authorization-description text-center">
       <!-- <template>
