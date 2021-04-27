@@ -15,6 +15,7 @@
 - Frontend
   - Nuxt.js
 - Backend
+  - Express
   - MongoDB
 
 ## Build Setup
