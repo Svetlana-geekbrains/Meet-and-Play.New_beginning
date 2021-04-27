@@ -87,7 +87,6 @@ export default {
   methods: {
     async onLogin() {
       const isCorrect = await this.$refs.authForm.validate()
-      console.log(isCorrect)
       if (isCorrect) {
         try {
           let response = await this.$auth.loginWith('local', {

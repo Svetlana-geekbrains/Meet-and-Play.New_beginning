@@ -8,7 +8,7 @@
       </div>
 
       <form class="modal-form mt-6 space-y-6" @submit.prevent="onSubmit">
-        <input type="hidden" name="remember" value="true" />
+        <input type="hidden" name="remember" value="true"/>
         <div class="flex flex-wrap justify-between">
           <div class="mt-4">
             <label for="name" class="block mb-2 not-sr-only">Имя</label>
@@ -50,7 +50,7 @@
           </div>
           <div class="mt-4">
             <label for="password" class="block mb-2 not-sr-only"
-              >Сменить Пароль</label
+            >Сменить Пароль</label
             >
             <input
               id="password"
@@ -78,12 +78,9 @@
           </button>
         </div>
       </form>
-      <nuxt-link
-        :to="{ name: 'login' }"
-        class="flex justify-center text-black font-bold modal-msg-link"
-      >
+      <button class="flex justify-center text-black font-bold modal-msg-link" @click="onLogout">
         Выйти из учетной записи
-      </nuxt-link>
+      </button>
     </div>
   </div>
 </template>
@@ -92,5 +89,11 @@
 export default {
   middleware: 'auth',
   name: 'Settings',
+  methods: {
+    async onLogout() {
+      await this.$auth.logout();
+      this.$router.push('/login')
+    }
+  }
 }
 </script>
