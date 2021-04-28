@@ -2,13 +2,13 @@
   <div
     class="modal modal-sign-up flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8"
   >
-    <div class="max-w-xl w-full space-y-8">
+    <div class="flex flex-col max-w-xl w-full space-y-8">
       <div>
         <h2 class="modal-title mt-6 text-center text-3xl">Настройки</h2>
       </div>
 
       <form class="modal-form mt-6 space-y-6" @submit.prevent="onSubmit">
-        <input type="hidden" name="remember" value="true"/>
+        <input type="hidden" name="remember" value="true" />
         <div class="flex flex-wrap justify-between">
           <div class="mt-4">
             <label for="name" class="block mb-2 not-sr-only">Имя</label>
@@ -50,7 +50,7 @@
           </div>
           <div class="mt-4">
             <label for="password" class="block mb-2 not-sr-only"
-            >Сменить Пароль</label
+              >Сменить Пароль</label
             >
             <input
               id="password"
@@ -78,7 +78,10 @@
           </button>
         </div>
       </form>
-      <button class="flex justify-center text-black font-bold modal-msg-link" @click="onLogout">
+      <button
+        class="justify-center text-black font-bold modal-msg-link"
+        @click="onLogout"
+      >
         Выйти из учетной записи
       </button>
     </div>
@@ -87,13 +90,13 @@
 
 <script>
 export default {
-  middleware: 'auth',
+  // middleware: 'auth',
   name: 'Settings',
   methods: {
     async onLogout() {
-      await this.$auth.logout();
+      await this.$auth.logout()
       this.$router.push('/login')
-    }
-  }
+    },
+  },
 }
 </script>
