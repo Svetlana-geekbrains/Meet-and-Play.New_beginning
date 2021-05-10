@@ -30,6 +30,6 @@ routes.forEach(item => {
 })
 
 // объявление роутов
-const PORT = 3000
+const PORT = 5000
 http.createServer({}, app).listen(PORT)
 console.log(`Server running at ${PORT}`);

@@ -1,5 +1,5 @@
-@import "./colors.scss";
-@import "./sizes.scss";
+@import './colors.scss';
+@import './sizes.scss';
 
 *,
 *::after,
@@ -7,7 +7,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Inter", Arial, sans-serif;
+  font-family: 'Inter', Arial, sans-serif;
   font-size: 16px;
 }
 
@@ -57,6 +57,9 @@ button {
   &:active {
     background-color: $btn-fill-hover;
   }
+  &_settings {
+    width: auto;
+  }
 }
 
 //для кнопок фильтрации
@@ -78,8 +81,8 @@ button {
 input,
 select {
   outline: none;
-  width: 280px;
-  height: 50px;
+  //width: 280px;
+  //height: 50px;
   border: 1px solid $border;
   box-sizing: border-box;
   border-radius: 10px;
@@ -108,4 +111,13 @@ select {
   @include wrapper;
   margin: 0 auto;
   display: flex;
+}
+fieldset {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.field-wrap {
+  margin-top: 13px;
 }

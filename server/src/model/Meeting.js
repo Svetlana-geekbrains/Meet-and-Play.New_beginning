@@ -4,18 +4,46 @@ const { model, Schema, Schema: {
 } = require('mongoose')
 
 const schema = new Schema({
-    info: {
+    image: {
         type: String,
         default: '',
     },
-    status: {
+    title: {
         type: String,
         default: '',
     },
-    meetingPoint: {
+    city: {
+        type: String,
+        default: '',
+    },
+    address: {
+        type: String,
+        default: '',
+    },     
+    sportType: {
+        type: String,
+        default: '',
+    },     
+    count: {
+        type: Number,
+        default: 0,
+    },
+    date: {
+        type: String,
+        default: '',
+    },
+    time: {
+        type: String,
+        default: '',
+    },
+    user: {
         type: ObjectId,
-        ref: "MeetingPoint",
-      },    
+        ref: "User",
+    },
+    categories: {
+        type: ObjectId,
+        ref: "Category",
+    },
 })
 
 module.exports = model('Meeting', schema)

@@ -1,8 +1,10 @@
 <template>
   <div
-    class="modal modal-sign-up min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8"
+    class="modal modal-sign-up flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8"
   >
-    <span class="modal-close"></span>
+    <nuxt-link to="/">
+      <span class="modal-close"></span>
+    </nuxt-link>
     <div class="max-w-xl w-full space-y-8">
       <div>
         <h2 class="modal-title mt-6 text-center text-3xl">Регистрация</h2>
@@ -24,7 +26,7 @@
             />
           </div>
           <div class="mt-4">
-            <label for="city" class="block mb-2 not-sr-only">Город</label>
+            <label for="city" class="block mb-2 not-sr-only"> Город </label>
             <input
               id="city"
               name="city"
@@ -36,9 +38,9 @@
             />
           </div>
           <div class="mt-4">
-            <label for="email-address" class="block mb-2 not-sr-only"
-              >Email</label
-            >
+            <label for="email-address" class="block mb-2 not-sr-only">
+              Email
+            </label>
             <input
               id="email-address"
               name="email"
@@ -72,42 +74,14 @@
         </div>
       </form>
       <span class="flex justify-center modal-msg">Уже зарегистрированы?</span>
-      <router-link
+      <nuxt-link
         :to="{ name: 'login' }"
         class="flex justify-center text-black font-bold modal-msg-link"
-        >Войти</router-link
       >
+        Войти
+      </nuxt-link>
     </div>
   </div>
-  <!-- <div class="modal modal-sign-up">
-    <span class="modal-close"></span>
-    <span class="modal-title">Регистрация</span>
-    <form action="#" class="modal-form">
-      <div class="wrp">
-        <label>
-          <span class="modal-name">Имя</span>
-          <input type="text" name="" id="" placeholder="Иван" />
-        </label>
-        <label>
-          <span class="modal-name">Город</span>
-          <input type="text" name="" id="" placeholder="Москва" />
-        </label>
-      </div>
-      <div class="wrp">
-        <label>
-          <span class="modal-name">Эл. почта</span>
-          <input type="email" name="" id="" placeholder="ivan@ivanov.ru" />
-        </label>
-        <label>
-          <span class="modal-name">Пароль</span>
-          <input type="password" name="" id="" placeholder="******" />
-        </label>
-      </div>
-      <button type="button" class="form-btn">Найти</button>
-    </form>
-    <span class="modal-msg">Уже зарегистрированы?</span>
-    <a href="#" class="modal-msg-link">Войти</a>
-  </div> -->
 </template>
 
 <script>

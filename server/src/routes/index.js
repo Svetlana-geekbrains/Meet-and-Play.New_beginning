@@ -2,5 +2,5 @@ const { modelName } = require("../model/User");
 
 
 module.exports = {
-    routes: ["users", "placement", "meetings", "meetingPoint",],
+    routes: ["placement", "meetings", "meetingPoint", "auth", "categories"],
 }

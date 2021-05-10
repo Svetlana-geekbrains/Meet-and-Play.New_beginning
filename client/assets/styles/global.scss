@@ -3,15 +3,37 @@
 @import "./variables.scss";
 @import "./loyout.scss";
 @import "./meetings.scss";
+@import "./card.scss";
 @import "./create_meeting.scss";
 @import "./registration_login.scss";
 @import "./settings.scss";
 @import "./support.scss";
 
 
+//////
+.w-75 {
+  width: 75%;
+}
+//////
+
 .views-main {
   padding: 32px;
-
+  justify-content: space-between;
+  &__head {
+    display: flex;
+    align-items: center;
+  }
+  &__btn-back {
+    margin-right: 44px;
+    svg {
+      fill: none;
+      stroke:#272727;
+      stroke-width: 2.5px;
+    }
+    &:hover svg {
+      stroke: $link-color-hover;
+    }
+  }
   &__title {
     display: inline-block;
     font-size: 32px;

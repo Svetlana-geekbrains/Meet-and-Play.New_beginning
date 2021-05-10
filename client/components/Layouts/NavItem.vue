@@ -1,19 +1,20 @@
 <template>
   <li class="mt-5">
-    <i class="el-icon-delete"></i>
     <nuxt-link
+      exact
+      no-prefetch
       :to="to"
-      class="bottom-link flex items-center no-underline text-black"
+      class="top-link flex items-center no-underline text-black"
       active-class="active-link"
-      ><slot
-    /></nuxt-link>
+    >
+      <slot />
+    </nuxt-link>
   </li>
 </template>
 
 <script>
 export default {
-  name: 'NavBottom',
-  component: {},
+  name: 'NavItem',
   props: {
     to: {
       type: String,
